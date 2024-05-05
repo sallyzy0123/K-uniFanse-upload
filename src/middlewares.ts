@@ -115,6 +115,7 @@ const makeThumbnail = async (
       .resize(160, 160)
       .png()
       .toFile(req.file?.path + '_thumb');
+    console.log('thumbnail created', req.file?.path);
     next();
   } catch (error) {
     next(new CustomError('Thumbnail not created', 500));
